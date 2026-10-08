@@ -133,12 +133,14 @@ function draw(d){
     new Date().toLocaleTimeString('en-AU', {hour: 'numeric', minute: '2-digit'}) + '.';
   document.getElementById('msg').hidden = true;
 }
-async function load(){
+async function load(tries = 3){
   try {
     const d = await (await fetch(ENDPOINT, {cache: 'no-store'})).json();
     if (!d.ok) throw new Error('bad');
     draw(d);
   } catch (e) {
+    // Google can drop the first call to a sleeping script, so retry quickly before showing an error.
+    if (tries > 1) return setTimeout(() => load(tries - 1), 2000);
     const m = document.getElementById('msg');
     m.textContent = "Couldn't reach the results just now. Trying again in a minute.";
     m.hidden = false;

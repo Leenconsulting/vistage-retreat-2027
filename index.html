@@ -601,9 +601,18 @@ form.addEventListener('submit', async e => {
   const btn = document.getElementById('sendBtn');
   btn.disabled = true; btn.textContent = 'Sending...';
   try {
-    const res = await fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body: JSON.stringify({name, parts, notes, picks: picks.map(id => ({id, name: byId(id).name})), website: form.elements.website.value})});
-    const out = await res.json();
+    const body = JSON.stringify({name, parts, notes, picks: picks.map(id => ({id, name: byId(id).name})), website: form.elements.website.value});
+    // Google can drop the first call to a sleeping script. Sends are upserts by name, so retrying is safe.
+    let out;
+    for (let i = 0; i < 3; i++) {
+      try {
+        out = await (await fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body})).json();
+        break;
+      } catch (netErr) {
+        if (i === 2) throw netErr;
+        await new Promise(r => setTimeout(r, 1500 * (i + 1)));
+      }
+    }
     if (!out.ok) throw new Error(out.error || 'failed');
     store.set('retreat-rsvp', {name, parts, notes});
     showDone(name, parts, out.updated);
