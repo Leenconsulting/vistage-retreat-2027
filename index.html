@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light">
 <title>Vistage Group Retreat 2027</title>
-<meta name="description" content="Vistage CEO Group Perth: Group Retreat, Rockingham and Mandurah, 4 and 5 February 2027.">
+<meta name="description" content="Vistage CEO Group Perth: Group Retreat, Rockingham and Mandurah, 11 and 12 February 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -138,12 +138,17 @@ section{padding:84px 0}
 .vote svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 .vote[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--navy-deep)}
 .vote[aria-pressed="true"] svg{fill:currentColor}
+.cards.full .vote[aria-pressed="false"]{opacity:.45}
+.top3{display:inline-flex;align-items:center;gap:8px;background:var(--amber-soft);color:var(--navy-deep);font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;margin-top:18px}
 
 /* ---------- vote bar ---------- */
 .votebar{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);z-index:20;background:var(--navy-deep);color:#fff;border-radius:999px;padding:10px 10px 10px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 12px 34px rgba(0,0,0,.25);transition:transform .25s ease;max-width:calc(100% - 32px)}
 .votebar.show{transform:translate(-50%,0)}
 .votebar b{color:var(--amber)}
 .votebar .btn{padding:11px 18px;font-size:14px}
+.votebar .dots{display:inline-flex;gap:5px;margin-right:10px;vertical-align:-1px}
+.votebar .dots i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--amber);display:inline-block}
+.votebar .dots i.on{background:var(--amber)}
 
 /* ---------- good to know ---------- */
 .know .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
@@ -169,6 +174,27 @@ section{padding:84px 0}
 .opt small{display:block;color:var(--grey);font-size:13px}
 .form .btn{width:100%;justify-content:center}
 .form .fine{font-size:13px;color:var(--grey);text-align:center;margin:12px 0 0}
+.form .f2{display:block;font-weight:700;color:var(--navy);font-size:15px;margin:0 0 6px}
+.opt.off{opacity:.45;cursor:default}
+.err{display:none;color:#B3261E;font-size:14px;font-weight:600;margin:-12px 0 16px}
+.err.show{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.picksbox{border:1.5px dashed var(--line);border-radius:12px;padding:12px 14px;margin-bottom:18px}
+.picksbox ol{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.picksbox li{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:600;color:var(--navy);line-height:1.3}
+.picksbox li .n{width:24px;height:24px;border-radius:50%;background:var(--amber);color:var(--navy-deep);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex:none}
+.picksbox li button{margin-left:auto;border:0;background:none;color:var(--grey);font-size:22px;line-height:1;cursor:pointer;padding:0 4px}
+.picksbox .empty{margin:0;font-size:15px;color:var(--grey)}
+.picksbox ol + .empty{margin-top:10px}
+.picksbox a{color:var(--navy);font-weight:700}
+.btn-line{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn[disabled]{opacity:.6;cursor:wait;transform:none}
+.done .tick{width:52px;height:52px;border-radius:50%;background:var(--amber);color:var(--navy-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.done .tick svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:3}
+.done h3{font-size:26px;font-weight:800;margin:0 0 8px}
+.done p{margin:0 0 10px;font-size:16px}
+.done ul{margin:0 0 14px;padding-left:20px;font-size:16px}
+.done .btn{margin-top:8px}
 
 /* ---------- footer ---------- */
 footer{background:var(--navy-deep);color:rgba(255,255,255,.75);padding:44px 0 36px;font-size:14px}
@@ -233,11 +259,11 @@ footer a{color:rgba(255,255,255,.85)}
     <span class="kicker">Vistage CEO Group · Perth</span>
     <h1>Group Retreat 2027</h1>
     <p class="where">Rockingham &amp; Mandurah</p>
-    <span class="when">Thursday 4 &amp; Friday 5 February 2027</span>
+    <span class="when">Thursday 11 &amp; Friday 12 February 2027</span>
     <div class="ctas">
       <a class="btn btn-amber" href="#rsvp">Confirm my attendance
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost" href="#activities">Vote on activities</a>
+      <a class="btn btn-ghost" href="#activities">Pick your top 3 activities</a>
     </div>
   </div>
 </section>
@@ -279,19 +305,19 @@ footer a{color:rgba(255,255,255,.85)}
 
     <div class="days">
       <article class="day">
-        <div class="top"><img src="img/rockingham-foreshore.jpg" alt="Rockingham foreshore on a sunny day"><div class="lbl"><small>Day one</small><b>Thursday 4 February</b></div></div>
+        <div class="top"><img src="img/rockingham-foreshore.jpg" alt="Rockingham foreshore on a sunny day"><div class="lbl"><small>Day one</small><b>Thursday 11 February</b></div></div>
         <ol class="tl">
           <li class="free"><div class="time">Morning</div><div><div class="what">Your time</div><div class="note">Work as normal, then drive down with an overnight bag. Have lunch before you arrive.</div></div></li>
           <li class="core"><div class="time">1:00pm</div><div><div class="what">Group session at Mick's, Rockingham</div><div class="note">Check-in, Mick's host presentation and a tour of the site, then issue processing. Afternoon tea provided. Address on your calendar invite.</div></div></li>
           <li class="core"><div class="time">5:00pm</div><div><div class="what">Drive to Mandurah and check in</div><div class="note">About 30 minutes down the coast.</div></div></li>
-          <li class="free"><div class="time">6:15pm</div><div><div class="what">Optional: sunset on the water</div><div class="note">See the activities below and vote. Sunset is around 7:15pm.</div></div></li>
+          <li class="free"><div class="time">6:15pm</div><div><div class="what">Optional: sunset on the water</div><div class="note">See the activities below and pick your top 3. Sunset is around 7:15pm.</div></div></li>
           <li class="core"><div class="time">7:30pm</div><div><div class="what">Group dinner</div><div class="note">Waterfront, Mandurah. Venue confirmed closer to the date.</div></div></li>
         </ol>
         <div class="foot">Overnight in Mandurah. Rooms booked for the group.</div>
       </article>
 
       <article class="day">
-        <div class="top"><img src="img/mandurah-foreshore.jpg" alt="Mandurah foreshore and estuary under a clear sky"><div class="lbl"><small>Day two</small><b>Friday 5 February</b></div></div>
+        <div class="top"><img src="img/mandurah-foreshore.jpg" alt="Mandurah foreshore and estuary under a clear sky"><div class="lbl"><small>Day two</small><b>Friday 12 February</b></div></div>
         <ol class="tl">
           <li class="free"><div class="time">Morning</div><div><div class="what">Your time</div><div class="note">Work from your room, or join a sunrise swim or walk first.</div></div></li>
           <li class="core"><div class="time">10:00am</div><div><div class="what">Open</div><div class="note">Quick check-in and the outcomes for the day.</div></div></li>
@@ -314,7 +340,7 @@ footer a{color:rgba(255,255,255,.85)}
   <div class="wrap">
     <span class="kicker">Around the core</span>
     <h2>Make a little more of it</h2>
-    <p>Dolphins, crabs, islands, golf, forest trails and good food, most within half an hour. Pick the ones you would join and we will book the favourites.</p>
+    <p>Dolphins, crabs, islands, golf, forest trails and good food, most within half an hour. Pick your top three and we will book where the group overlaps.</p>
   </div>
 </div>
 
@@ -322,8 +348,9 @@ footer a{color:rgba(255,255,255,.85)}
   <div class="wrap">
     <span class="kicker dark">Optional activities</span>
     <div class="rule"></div>
-    <h2>Vote for what you'd join</h2>
-    <p class="lede" style="margin-top:12px">Tap <b>Count me in</b> on anything you'd do. The most popular options get booked. None of it is compulsory.</p>
+    <h2>Pick your top 3</h2>
+    <p class="lede" style="margin-top:12px">Choose the three you'd most like to do. Where the group overlaps, we'll book it. None of it is compulsory.</p>
+    <span class="top3" id="top3note">Tap <b>Add to my top 3</b> on any card, then send your picks with your RSVP.</span>
     <div class="filters" role="group" aria-label="Filter by when"><button class="chip" type="button" data-slot="all" aria-pressed="true">All<span class="n">30</span></button><button class="chip" type="button" data-slot="thu-am" aria-pressed="false">Thursday morning<span class="n">5</span></button><button class="chip" type="button" data-slot="thu-pm" aria-pressed="false">Thursday sunset<span class="n">5</span></button><button class="chip" type="button" data-slot="fri-am" aria-pressed="false">Friday sunrise<span class="n">6</span></button><button class="chip" type="button" data-slot="fri-pm" aria-pressed="false">Friday night<span class="n">7</span></button><button class="chip" type="button" data-slot="sat" aria-pressed="false">Saturday<span class="n">16</span></button></div>
     <p class="howto" id="howto"></p>
     <div class="cards" id="cards"></div>
@@ -342,7 +369,7 @@ footer a{color:rgba(255,255,255,.85)}
         <li>Mandurah to Perth: ~55 min</li>
         <li>Car-pooling welcome. Tell us in the RSVP.</li></ul></div>
       <div class="kb"><h3>Weather</h3><ul>
-        <li>Early February is peak summer, typically around 30°C</li>
+        <li>Mid-February is peak summer, typically around 30°C</li>
         <li>Calm mornings, sea breeze in the afternoon</li>
         <li>Sunset around 7:15pm</li></ul></div>
       <div class="kb"><h3>What to bring</h3><ul>
@@ -363,24 +390,31 @@ footer a{color:rgba(255,255,255,.85)}
       <span class="kicker">RSVP</span>
       <div class="rule"></div>
       <h2>Confirm your attendance</h2>
-      <p class="lede" style="margin-top:12px">Let us know which parts you're in for, and whether you're staying Friday night. We'll handle the bookings.</p>
-      <p style="color:rgba(255,255,255,.75);margin-top:18px;font-size:15px">Questions? Talk to Linc.</p>
+      <p class="lede" style="margin-top:12px">Tell us which parts you're in for and send your top 3 activities in one go. We'll handle the bookings.</p>
+      <p style="color:rgba(255,255,255,.75);margin-top:18px;font-size:15px">Changed your mind? Send it again with the same name and we'll update your reply. Questions? Talk to Linc.</p>
     </div>
     <form class="form" id="rsvpForm" novalidate>
+      <div id="formBody">
       <label class="f" for="nm">Your name</label>
-      <input type="text" id="nm" name="name" autocomplete="name" placeholder="First and last name">
-      <span class="f" style="display:block;font-weight:700;color:var(--navy);font-size:15px;margin:0 0 6px">I'm in for</span>
+      <input type="text" id="nm" name="name" autocomplete="name" maxlength="80" placeholder="First and last name">
+      <p class="err" id="nmErr">Please add your name so we know who's coming.</p>
+      <span class="f2">I'm in for</span>
       <div class="opts">
-        <label class="opt"><input type="checkbox" checked> <span>Thursday session at Mick's<small>1 to 5pm, Rockingham</small></span></label>
-        <label class="opt"><input type="checkbox" checked> <span>Thursday dinner &amp; overnight<small>Mandurah</small></span></label>
-        <label class="opt"><input type="checkbox" checked> <span>Friday strategy &amp; goals day<small>10am to 4pm, Mandurah</small></span></label>
-        <label class="opt"><input type="checkbox"> <span>Staying Friday night<small>Optional</small></span></label>
-        <label class="opt"><input type="checkbox"> <span>Bringing my partner on Friday night<small>Optional</small></span></label>
+        <label class="opt"><input type="checkbox" name="thu" checked> <span>Thursday session at Mick's<small>1 to 5pm, Rockingham</small></span></label>
+        <label class="opt"><input type="checkbox" name="dinner" checked> <span>Thursday dinner &amp; overnight<small>Mandurah</small></span></label>
+        <label class="opt"><input type="checkbox" name="fri" checked> <span>Friday strategy &amp; goals day<small>10am to 4pm, Mandurah</small></span></label>
+        <label class="opt"><input type="checkbox" name="frinight"> <span>Staying Friday night<small>Optional</small></span></label>
+        <label class="opt off" id="partnerOpt"><input type="checkbox" name="partner" disabled> <span>Bringing my partner on Friday night<small>Tick "Staying Friday night" first</small></span></label>
       </div>
+      <span class="f2">My top 3 activities</span>
+      <div class="picksbox" id="picksbox"></div>
       <label class="f" for="dt">Dietary needs or notes</label>
-      <textarea id="dt" rows="2" placeholder="Anything we should know"></textarea>
-      <button class="btn btn-amber" type="submit">Confirm attendance</button>
-      <p class="fine">RSVPs and votes go live shortly.</p>
+      <textarea id="dt" name="notes" rows="2" maxlength="500" placeholder="Anything we should know"></textarea>
+      <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-amber" type="submit" id="sendBtn">Send my RSVP</button>
+      <p class="fine" id="fine">Can't make it? Untick everything and send, so we know. Your reply goes to Linc only.</p>
+      </div>
+      <div class="done" id="done" hidden></div>
     </form>
   </div>
 </section>
@@ -399,7 +433,7 @@ footer a{color:rgba(255,255,255,.85)}
   </div>
 </footer>
 
-<div class="votebar" id="votebar" role="status"><span><b id="vcount">0</b> <span id="vlabel">activities picked</span></span><button class="btn btn-amber" id="vsubmit" type="button">Submit my votes</button></div>
+<div class="votebar" id="votebar" role="status"><span><span class="dots" id="vdots"></span><span id="vlabel">0 of 3 picked</span></span><button class="btn btn-amber" id="vsubmit" type="button">Send my picks</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -426,10 +460,22 @@ const META = {
   pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
   tag:'<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/>'
 };
-let picks = new Set();
-try { picks = new Set(JSON.parse(localStorage.getItem('retreat-picks')||'[]')); } catch(e) {}
-const save = ()=>{ try { localStorage.setItem('retreat-picks', JSON.stringify([...picks])); } catch(e) {} };
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycby9RI_Umm_qu7lWyK2N-FOTaZG8GrpLIXAMksfbARVzytiDP_CZpiVirUgmGlJjP1LWFg/exec';
+const MAX = 3;
+const byId = id => ACTIVITIES.find(a => a.id === id);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e) { return null; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
+};
+let picks = store.get('retreat-top3') || store.get('retreat-picks') || [];
+picks = (Array.isArray(picks) ? picks : []).filter(id => byId(id)).slice(0, MAX);
+const save = () => store.set('retreat-top3', picks);
 let current = 'all';
+let rsvpInView = false;
+
+const STAR = '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>';
+const voteLabel = on => on ? 'In my top 3' : 'Add to my top 3';
 
 function render(){
   const list = ACTIVITIES.filter(a => current==='all' || a.slots.includes(current));
@@ -437,7 +483,7 @@ function render(){
     ? `${ACTIVITIES.length} ideas around the core. Filter by when they'd happen.`
     : (SLOTS.find(s=>s.id===current)||{}).blurb || '';
   document.getElementById('cards').innerHTML = list.map(a => {
-    const on = picks.has(a.id);
+    const on = picks.includes(a.id);
     const ph = a.img
       ? `<img src="img/${a.img}.jpg" alt="${a.alt||a.name}" loading="lazy">`
       : `<div class="ico">${SVG(ICONS[a.icon]||ICONS.sun)}</div>`;
@@ -455,25 +501,43 @@ function render(){
         </div>
         <div class="ft">
           <span class="op">${a.url?`<a href="${a.url}" target="_blank" rel="noopener">${a.op}</a>`:(a.op||'')}</span>
-          <button class="vote" type="button" data-id="${a.id}" aria-pressed="${on}">
-            <svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9zM7 11l4-8c1.5 0 2.5 1 2.5 2.5V9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"/></svg>
-            <span>${on?'I\'m in':'Count me in'}</span></button>
+          <button class="vote" type="button" data-id="${a.id}" aria-pressed="${on}">${STAR}<span>${voteLabel(on)}</span></button>
         </div>
       </div></article>`;
   }).join('');
+  syncPicks();
+}
+function syncPicks(){
+  document.querySelectorAll('.vote').forEach(b => {
+    const on = picks.includes(b.dataset.id);
+    b.setAttribute('aria-pressed', on);
+    b.querySelector('span').textContent = voteLabel(on);
+  });
+  document.getElementById('cards').classList.toggle('full', picks.length >= MAX);
+  const n = picks.length;
+  document.getElementById('top3note').innerHTML = n >= MAX
+    ? 'Your top 3 is set. Tap one to swap it, then send it with your RSVP below.'
+    : n ? `${n} of 3 picked. ${MAX-n} to go.` : 'Tap <b>Add to my top 3</b> on any card, then send your picks with your RSVP.';
   updateBar();
+  renderPicksBox();
 }
 function updateBar(){
-  const n = picks.size;
-  document.getElementById('vcount').textContent = n;
-  document.getElementById('vlabel').textContent = n===1?'activity picked':'activities picked';
-  document.getElementById('votebar').classList.toggle('show', n>0);
+  const n = picks.length;
+  document.getElementById('vdots').innerHTML = [0,1,2].map(i => `<i class="${i<n?'on':''}"></i>`).join('');
+  document.getElementById('vlabel').textContent = n >= MAX ? 'Top 3 picked' : `${n} of 3 picked`;
+  document.getElementById('votebar').classList.toggle('show', n>0 && !rsvpInView);
+}
+function renderPicksBox(){
+  const el = document.getElementById('picksbox');
+  if (!picks.length) { el.innerHTML = '<p class="empty">None picked yet. <a href="#activities">Choose up to 3 activities</a>.</p>'; return; }
+  el.innerHTML = '<ol>' + picks.map((id,i) => `<li><span class="n">${i+1}</span>${esc(byId(id).name)}<button type="button" data-rm="${id}" aria-label="Remove ${esc(byId(id).name)}">&times;</button></li>`).join('') + '</ol>'
+    + (picks.length < MAX ? `<p class="empty">${MAX-picks.length} more to go. <a href="#activities">Add another</a>.</p>` : '');
 }
 let toastT;
 function toast(msg){
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
-  clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove('show'), 3600);
+  clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove('show'), 4200);
 }
 document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
   current = c.dataset.slot;
@@ -483,17 +547,88 @@ document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () =
 document.getElementById('cards').addEventListener('click', e => {
   const b = e.target.closest('.vote'); if(!b) return;
   const id = b.dataset.id;
-  picks.has(id) ? picks.delete(id) : picks.add(id);
-  save();
-  b.setAttribute('aria-pressed', picks.has(id));
-  b.querySelector('span').textContent = picks.has(id) ? 'I\'m in' : 'Count me in';
-  updateBar();
+  if (picks.includes(id)) picks = picks.filter(x => x !== id);
+  else if (picks.length >= MAX) { toast('You have your 3. Tap one of them to swap it out.'); return; }
+  else picks.push(id);
+  save(); syncPicks();
+  if (picks.length === MAX && picks.includes(id)) toast('Top 3 picked. Send them with your RSVP at the bottom of the page.');
 });
-document.getElementById('vsubmit').addEventListener('click', () =>
-  toast('Thanks! Voting goes live shortly. Your picks are saved on this device for now.'));
-document.getElementById('rsvpForm').addEventListener('submit', e => {
+document.getElementById('picksbox').addEventListener('click', e => {
+  const b = e.target.closest('[data-rm]'); if(!b) return;
+  picks = picks.filter(x => x !== b.dataset.rm); save(); syncPicks();
+});
+document.getElementById('vsubmit').addEventListener('click', () => {
+  const nm = document.getElementById('nm');
+  document.getElementById('rsvp').scrollIntoView({behavior:'smooth'});
+  if (nm.value) return;
+  // Focus only once the scroll has finished, or it cancels the scroll part-way.
+  const go = () => nm.focus({preventScroll:true});
+  if ('onscrollend' in window) window.addEventListener('scrollend', go, {once:true});
+  else setTimeout(go, 1200);
+});
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(es => { rsvpInView = es[0].isIntersecting; updateBar(); }, {threshold:.15})
+    .observe(document.getElementById('rsvp'));
+}
+
+/* ---------- RSVP ---------- */
+const form = document.getElementById('rsvpForm');
+const PARTS = [['thu',"Thursday session at Mick's"],['dinner','Thursday dinner & overnight'],['fri','Friday strategy & goals day'],['frinight','Staying Friday night'],['partner','Partner joining Friday night']];
+function syncPartner(){
+  const on = form.elements.frinight.checked, pt = form.elements.partner;
+  pt.disabled = !on; if (!on) pt.checked = false;
+  const opt = document.getElementById('partnerOpt');
+  opt.classList.toggle('off', !on);
+  opt.querySelector('small').textContent = on ? 'Optional' : 'Tick "Staying Friday night" first';
+}
+form.elements.frinight.addEventListener('change', syncPartner);
+const prior = store.get('retreat-rsvp');
+if (prior && prior.name) {
+  form.elements.name.value = prior.name;
+  PARTS.forEach(([k]) => { form.elements[k].checked = !!(prior.parts||{})[k]; });
+  form.elements.notes.value = prior.notes || '';
+  document.getElementById('fine').textContent = "You've already replied from this device. Send again to update it.";
+}
+syncPartner();
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  toast('Thanks! RSVPs go live shortly, and Linc will let everyone know when.');
+  const name = form.elements.name.value.trim().replace(/\s+/g, ' ');
+  const err = document.getElementById('nmErr');
+  if (name.length < 2) { err.classList.add('show'); form.elements.name.focus(); return; }
+  err.classList.remove('show');
+  const parts = {}; PARTS.forEach(([k]) => { parts[k] = form.elements[k].checked; });
+  const notes = form.elements.notes.value.trim();
+  const btn = document.getElementById('sendBtn');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  try {
+    const res = await fetch(ENDPOINT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({name, parts, notes, picks: picks.map(id => ({id, name: byId(id).name})), website: form.elements.website.value})});
+    const out = await res.json();
+    if (!out.ok) throw new Error(out.error || 'failed');
+    store.set('retreat-rsvp', {name, parts, notes});
+    showDone(name, parts, out.updated);
+  } catch (x) {
+    toast(x.message === 'name' ? 'Please add your full name.' : "That didn't send. Check your connection and try again.");
+  } finally {
+    btn.disabled = false; btn.textContent = 'Send my RSVP';
+  }
+});
+function showDone(name, parts, updated){
+  const ins = PARTS.filter(([k]) => parts[k]).map(([,l]) => l);
+  document.getElementById('done').innerHTML = `
+    <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h3>${updated ? 'Updated' : 'Thanks'}, ${esc(name.split(' ')[0])}</h3>
+    ${ins.length ? `<p>You're in for:</p><ul>${ins.map(l => `<li>${esc(l)}</li>`).join('')}</ul>` : `<p>Got it, you can't make it this time. Thanks for letting us know.</p>`}
+    <p><b>Your top 3:</b> ${picks.length ? picks.map(id => esc(byId(id).name)).join(', ') : 'none picked'}</p>
+    <button class="btn btn-line" type="button" id="editBtn">Change my reply</button>`;
+  document.getElementById('formBody').hidden = true;
+  document.getElementById('done').hidden = false;
+  document.getElementById('fine').textContent = "You've already replied from this device. Send again to update it.";
+}
+document.getElementById('done').addEventListener('click', e => {
+  if (!e.target.closest('#editBtn')) return;
+  document.getElementById('done').hidden = true;
+  document.getElementById('formBody').hidden = false;
 });
 render();
 </script>
